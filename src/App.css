@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+@font-face{
+  font-family: "auto-techno";
+  src: local("auto-techno.ttf"),
+  url("./assets/fonts/auto-techno.ttf") format("truetype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  background-color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul li a{
+  display: block;
+  font-family: 'auto-techno';
   color: white;
+  padding: 10px;
+  width: 220px;
 }
 
-.App-link {
-  color: #61dafb;
+ul li a::before{
+  content: url(./assets/icons/border1.svg);
+  display: block;
+  position: absolute;
+  margin-left: -10px;
+  margin-top: -12px;
+  width: 100px;
+  height: 100px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+ul li a.active::before{
+  display: none;
+}
+
+ul li a.active{
+  color: black;
+  background-color: white;
+  -webkit-clip-path: polygon(8% 0, 93% 0, 100% 0, 100% 72%, 91% 100%, 0 100%, 0 77%, 0 25%);
+  clip-path: polygon(8% 0, 93% 0, 100% 0, 100% 72%, 91% 100%, 0 100%, 0 77%, 0 25%);
+}
+
+ul li a:active{
+  display: none;
+}
+
+h1{
+  font-family: 'auto-techno';
+}
+
+.tombol{
+  margin-top: -1000px;
+}
+
+.menu button{
+  -webkit-clip-path: polygon(18% 0, 81% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(18% 0, 81% 0, 100% 100%, 0% 100%);
+}
+
+.arrow svg {
+  transform: rotate(180deg);
+  animation: animate 2s infinite;
+}
+
+.arrow svg:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrow svg:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes animate {
+  0% {
+      opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+      
   }
 }
